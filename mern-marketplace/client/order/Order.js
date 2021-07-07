@@ -17,6 +17,11 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     margin: 30,
   },
+  cart: {
+    textAlign: 'left',
+    width: '100%',
+    display: 'inline-flex'
+  },
   details: {
     display: 'inline-block',
     width: "100%",
@@ -132,7 +137,7 @@ export default function Order({match}) {
                 <Card className={classes.innerCardItems}>
                   {order.products.map((item, i) => {
                     return  <span key={i}>
-                      <Card>
+                      <Card className={classes.cart} >
                         <CardMedia
                           className={classes.cover}
                           image={'/api/product/image/'+item.product._id}

@@ -10,7 +10,7 @@ import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
 import shopRoutes from './routes/shop.routes'
 import productRoutes from './routes/product.routes'
-
+import orderRoutes from './routes/order.routes'
 
 // modules for server side rendering
 import React from 'react'
@@ -48,7 +48,7 @@ app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', shopRoutes)
 app.use('/', productRoutes)
-
+app.use('/', orderRoutes)
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()

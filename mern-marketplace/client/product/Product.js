@@ -9,7 +9,7 @@ import {makeStyles} from '@material-ui/core/styles'
 import {read, listRelated} from './api-product.js'
 import {Link} from 'react-router-dom'
 import Suggestions from './../product/Suggestions'
-
+import AddToCart from './../cart/AddToCart'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,7 +47,13 @@ const useStyles = makeStyles(theme => ({
     color: '#3e4c54b3',
     fontSize: '0.9em'
   },
-
+  addCart: {
+    width: '35px',
+    height: '35px',
+    padding: '10px 12px',
+    borderRadius: '0.25em',
+    backgroundColor: '#5f7c8b'
+  },
   action: {
     margin: '8px 24px',
     display: 'inline-block'
@@ -105,6 +111,7 @@ export default function Product ({match}) {
                   subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
                   action={
                     <span className={classes.action}>
+                      <AddToCart cartStyle={classes.addCart} item={product}/>
                     </span>
                   }
                 />
